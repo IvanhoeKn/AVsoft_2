@@ -44,9 +44,15 @@
     <ClCompile Include="rb_tree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Command.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="test.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
+    <Xml Include="new_test.xml">
       <Filter>Resource Files</Filter>
     </Xml>
   </ItemGroup>

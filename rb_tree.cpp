@@ -77,17 +77,15 @@ bool rb_tree<t_key>::insert(node<t_key>* ptr) {
 	node<t_key>* previous = nullptr;
 	node<t_key>* current = root;
 	bool flag = false;
-	while (current != nullptr) {
+	while (!flag && current != nullptr) {
 		previous = current;
 		if (ptr->key < current->key)
 			current = current->left;
-		else {
-			current = current->right;
-			if (ptr->key == previous->key) {
+		else
+			if (ptr->key > current->key)
+				current = current->right;
+			else 
 				flag = true;
-				break;
-			}
-		}
 	}
 	if (!flag) {
 		ptr->parent = previous;

@@ -14,7 +14,8 @@ department::department(const department& department_tmp) {
 
 std::istream& operator >> (std::istream& input, department& department_input) {
 	std::cout << "Enter Title: ";
-	std::cin >> department_input.title;
+	std::getline(input, department_input.title);
+	std::cout << "Entered: \"" << department_input.title << "\"" << std::endl;
 	return input;
 }
 

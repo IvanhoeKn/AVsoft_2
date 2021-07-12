@@ -29,6 +29,70 @@ struct node {
 //==============================================================================================
 
 template <typename t_key>
+class _tree_iterator {
+private:
+	node<t_key>* ptr;
+public:
+	_tree_iterator() {}
+	_tree_iterator(node<t_key>* it) : ptr(it) {}
+	~_tree_iterator() {
+		ptr = nullptr;
+	}
+	node<t_key>* get() { return ptr; }
+	const node<t_key>& operator *() { return *ptr; }
+	const node<t_key>* operator ->() { return &*ptr; }
+	_tree_iterator<t_key> operator ++ (int) {
+		_tree_iterator<t_key> res(*this);
+		ptr = tree_successor(ptr);
+		return res;
+	}
+	_tree_iterator<t_key>& operator ++() {
+		ptr = tree_successor(ptr);
+		return *this;
+	}
+	int operator != (const _tree_iterator<t_key>& t_tree_it) const {
+		return ptr != t_tree_it.ptr;
+	}
+	int operator == (const _tree_iterator<t_key>& t_tree_it) const {
+		return ptr == t_tree_it.ptr;
+	}
+protected:
+	node<t_key>* tree_successor(const node<t_key>* ptr) {
+		if (ptr->right != NULL)
+			return tree_minimum(ptr->right);
+		node<t_key>* previous = ptr->parent;
+		while (previous != NULL && ptr == previous->right) {
+			ptr = previous;
+			previous = ptr->parent;
+		}
+		return previous;
+	}
+	node<t_key>* tree_predecessor(const node<t_key>* ptr) {
+		if (ptr->left != NULL)
+			return tree_maximum(ptr->left);
+		node<t_key>* previous = ptr->parent;
+		while (previous != NULL && ptr == previous->left) {
+			ptr = previous;
+			previous = ptr->parent;
+		}
+		return previous;
+	}
+	node<t_key>* tree_minimum(node<t_key>* ptr) const {
+		while (ptr->left != nullptr)
+			ptr = ptr->left;
+		return ptr;
+	}
+	node<t_key>* tree_maximum(node<t_key>* ptr) const {
+		while (ptr->right != nullptr)
+			ptr = ptr->right;
+		return ptr;
+	}
+};
+
+//==============================================================================================
+//==============================================================================================
+
+template <typename t_key>
 class rb_tree {
 private:
 	node<t_key>* root;
@@ -44,6 +108,10 @@ public:
 	void show_NLR() const;
 	void show_LNR() const;
 	void show_LRN() const;
+	friend class _tree_iterator<t_key>;
+	typedef _tree_iterator<t_key> _tree_const_it;
+	_tree_const_it begin() const { return tree_minimum(root); }
+	_tree_const_it end() const { return nullptr; }
 private:
 	void recursion_clear(node<t_key>* ptr);
 	void insert_fixup(node<t_key>* ptr);

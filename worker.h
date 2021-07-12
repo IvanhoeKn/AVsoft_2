@@ -26,7 +26,7 @@ struct worker {
 	};
 	//Потоковый ввод/вывод
 	friend std::istream& operator >> (std::istream& input, worker& worker_input);
-	friend std::ostream& operator << (std::ostream& output, worker& worker_output);
+	friend std::ostream& operator << (std::ostream& output, const worker& worker_output);
 	//Перегрузка операторов
 	worker& operator = (const worker& worker_tmp);
 	worker& operator = (worker&& worker_tmp);

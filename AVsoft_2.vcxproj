@@ -146,12 +146,14 @@
     <ClInclude Include="worker.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Command.cpp" />
     <ClCompile Include="department.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="rb_tree.cpp" />
     <ClCompile Include="worker.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Xml Include="new_test.xml" />
     <Xml Include="test.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

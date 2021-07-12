@@ -1,4 +1,5 @@
 #include "worker.h"
+#include <limits>
 
 //Инициализирующий конструктор
 worker::worker(std::string surname_tmp, std::string name_tmp, std::string patronymic_tmp, std::string post_tmp, int salary_tmp) {
@@ -21,12 +22,15 @@ worker::worker(const worker& worker_tmp) {
 std::istream& operator >> (std::istream& input, worker& worker_input) { //добавить обработку коррктности введенных данных
 	std::cout << "Enter Surname: ";
 	std::cin >> worker_input.surname;
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	std::cout << "Enter Name: ";
 	std::cin >> worker_input.name;
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	std::cout << "Enter Patronymic: ";
 	std::cin >> worker_input.patronymic;
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	std::cout << "Enter Post: ";
-	std::cin >> worker_input.post;
+	std::getline(input, worker_input.post);
 	std::cout << "Enter Salary: ";
 	std::cin >> worker_input.salary;
 	return input;
@@ -72,11 +76,11 @@ worker& worker::operator = (worker&& worker_tmp) {
 }
 
 bool operator < (worker const& first, worker const& second) {
-	return first.surname < second.surname && first.name < second.name && first.patronymic < second.patronymic && first.post < second.post;
+	return (first.surname < second.surname) || (first.surname == second.surname && first.name < second.name) || (first.surname == second.surname && first.name == second.name && first.patronymic < second.patronymic) || (first.surname == second.surname && first.name == second.name && first.patronymic == second.patronymic && first.post < second.post);
 }
 
 bool operator > (worker const& first, worker const& second) {
-	return first.surname > second.surname && first.name > second.name && first.patronymic > second.patronymic && first.post > second.post;
+	return (first.surname > second.surname) || (first.surname == second.surname && first.name > second.name) || (first.surname == second.surname && first.name == second.name && first.patronymic > second.patronymic) || (first.surname == second.surname && first.name == second.name && first.patronymic == second.patronymic && first.post > second.post);
 }
 
 bool operator == (worker const& first, worker const& second) {

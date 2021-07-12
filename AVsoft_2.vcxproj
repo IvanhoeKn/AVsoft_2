@@ -147,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Command.cpp" />
+    <ClCompile Include="Company_state.cpp" />
     <ClCompile Include="department.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="rb_tree.cpp" />

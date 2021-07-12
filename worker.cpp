@@ -19,6 +19,13 @@ worker::worker(const worker& worker_tmp) {
 	salary = worker_tmp.salary;
 }
 
+worker::~worker() {
+	surname.clear();
+	name.clear();
+	patronymic.clear();
+	post.clear();
+}
+
 std::istream& operator >> (std::istream& input, worker& worker_input) { //добавить обработку коррктности введенных данных
 	std::cout << "Enter Surname: ";
 	std::cin >> worker_input.surname;

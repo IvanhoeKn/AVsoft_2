@@ -3,9 +3,9 @@
 
 #include <string>
 #include <iostream>
+#include "worker.h"
 #include "rb_tree.h"
 #include "department.h"
-#include "worker.h"
 
 class Command {
 protected: 

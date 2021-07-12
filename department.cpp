@@ -1,4 +1,5 @@
 #include "department.h"
+#include "rb_tree.cpp"
 
 department::department(std::string& title_tmp, int amount_wrk_tmp, double average_slr_tmp) {
 	title = title_tmp;
@@ -11,6 +12,11 @@ department::department(const department& department_tmp) {
 	amount_wrk = department_tmp.amount_wrk;
 	average_slr = department_tmp.average_slr;
 }
+
+department::~department() {
+	title.clear();
+	employment.clear();
+};
 
 std::istream& operator >> (std::istream& input, department& department_input) {
 	std::cout << "Enter Title: ";

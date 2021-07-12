@@ -1,6 +1,6 @@
 #include <iostream>
 #include <limits>
-#include <windows.h>
+#include <Windows.h>
 #include "Company_state.h"
 
 #ifdef max
@@ -15,9 +15,6 @@ std::string Msg = "You are wrong; repeate please!";
 int Answer(const std::string alt[], int n);
 
 int main(int argc, char* argv[]) {
-	/*SetConsoleCP(65001);
-	SetConsoleOutputCP(65001);
-    setlocale(LC_ALL, "ru_RU.UTF-8");*/
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 	if (argc < 2) {

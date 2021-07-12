@@ -92,4 +92,50 @@
 			</employment>
 		</employments>
 	</department>
+	<department name="Системное программирование">
+		<employments>
+			<employment>
+				<surname>Васильев</surname>
+				<name>Максим</name>
+				<middleName>Викторович</middleName>
+				<function>Руководитель отдела</function>
+				<salary>100000</salary>
+			</employment>
+			<employment>
+				<surname>Величко</surname>
+				<name>Ольга</name>
+				<middleName>Валерьевна</middleName>
+				<function>Заместитель руководителя отдела</function>
+				<salary>80000</salary>
+			</employment>
+			<employment>
+				<surname>Гаврилов</surname>
+				<name>Роман</name>
+				<middleName>Николаевич</middleName>
+				<function>Системный программист Windows</function>
+				<salary>50000</salary>
+			</employment>
+			<employment>
+				<surname>Долгов</surname>
+				<name>Николай</name>
+				<middleName>Алексеевич</middleName>
+				<function>Системный программист Windows</function>
+				<salary>50000</salary>
+			</employment>
+			<employment>
+				<surname>Дюков</surname>
+				<name>Владимир</name>
+				<middleName>Евгеньевич</middleName>
+				<function>Системный программист Linux</function>
+				<salary>50000</salary>
+			</employment>
+			<employment>
+				<surname>Емельянов</surname>
+				<name>Дмитрий</name>
+				<middleName>Юрьевич</middleName>
+				<function>Системный программист Linux</function>
+				<salary>50000</salary>
+			</employment>
+		</employments>
+	</department>
 </departments>

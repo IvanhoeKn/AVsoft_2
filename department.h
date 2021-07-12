@@ -21,10 +21,7 @@ struct department {
 	//Копирующий конструктор
 	department(const department& department_tmp);
 	//Деструктор
-	~department() { 
-		title.clear(); 
-		employment.clear();
-	};
+	~department();
 	//Потоковый ввод/вывод
 	friend std::istream& operator >> (std::istream& input, department& department_input);
 	friend std::ostream& operator << (std::ostream& output, department& department_output);

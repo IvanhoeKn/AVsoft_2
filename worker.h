@@ -18,12 +18,7 @@ struct worker {
 	//Копирующий конструктор
 	worker(const worker& worker_tmp);
 	//Деструктор
-	~worker() {
-		surname.clear();
-		name.clear();
-		patronymic.clear();
-		post.clear();
-	};
+	~worker();
 	//Потоковый ввод/вывод
 	friend std::istream& operator >> (std::istream& input, worker& worker_input);
 	friend std::ostream& operator << (std::ostream& output, const worker& worker_output);

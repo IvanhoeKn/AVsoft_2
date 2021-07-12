@@ -1,140 +1,94 @@
 <?xml version="1.0"?>
 <departments>
-	<department name="WEB СЂР°Р·СЂР°Р±РѕС‚РєР°">
+	<department name="WEB разработка">
 		<employments>
 			<employment>
-				<surname>Р‘Р°Р·Р°СЂРѕРІ</surname>
-				<name>РђРЅРґСЂРµР№</name>
-				<middleName>Р’РёРєС‚РѕСЂРѕРІРёС‡</middleName>
-				<function>Р СѓРєРѕРІРѕРґРёС‚РµР»СЊ РѕС‚РґРµР»Р°</function>
+				<surname>Базаров</surname>
+				<name>Андрей</name>
+				<middleName>Викторович</middleName>
+				<function>Руководитель отдела</function>
 				<salary>90000</salary>
 			</employment>
 			<employment>
-				<surname>Р‘Р°Р»РёС…РёРЅР°</surname>
-				<name>РћР»СЊРіР°</name>
-				<middleName>Р’СЏС‡РµСЃР»Р°РІРѕРІРЅР°</middleName>
-				<function>Р—Р°РјРµСЃС‚РёС‚РµР»СЊ СЂСѓРєРѕРІРѕРґРёС‚РµР»СЏ РѕС‚РґРµР»Р°</function>
+				<surname>Балихина</surname>
+				<name>Ольга</name>
+				<middleName>Вячеславовна</middleName>
+				<function>Заместитель руководителя отдела</function>
 				<salary>70000</salary>
 			</employment>
 			<employment>
-				<surname>Р‘Р°С€РјР°РєРѕРІР°</surname>
-				<name>Р•Р»РµРЅР°</name>
-				<middleName>РЎРµСЂРіРµРµРІРЅa</middleName>
-				<function>Р’РµСЂСЃС‚Р°Р»СЊС‰РёРє HTML</function>
+				<surname>Башмакова</surname>
+				<name>Елена</name>
+				<middleName>Сергеевнa</middleName>
+				<function>Верстальщик HTML</function>
 				<salary>40000</salary>
 			</employment>
 			<employment>
-				<surname>Р’РґРѕРІРёРЅ</surname>
-				<name>Р’РёС‚Р°Р»РёР№</name>
-				<middleName>Р®СЂСЊРµРІРёС‡</middleName>
-				<function>РџСЂРѕРіСЂР°РјРјРёСЃС‚ Javascript</function>
+				<surname>Вдовин</surname>
+				<name>Виталий</name>
+				<middleName>Юрьевич</middleName>
+				<function>Программист Javascript</function>
 				<salary>50000</salary>
 			</employment>
 			<employment>
-				<surname>Р’РґРѕРІРёРЅР°</surname>
-				<name>Р•РІРіРµРЅРёСЏ</name>
-				<middleName>Р¤РµРґРѕСЂРѕРІРЅР°</middleName>
-				<function>Р’РµСЂСЃС‚Р°Р»СЊС‰РёРє CSS</function>
+				<surname>Вдовина</surname>
+				<name>Евгения</name>
+				<middleName>Федоровна</middleName>
+				<function>Верстальщик CSS</function>
 				<salary>40000</salary>
 			</employment>
 			<employment>
-				<surname>Р“СЂРёРіРѕСЂСЊРµРІ</surname>
-				<name>РџР°РІРµР»</name>
-				<middleName>Р’Р»Р°РґРёРјРёСЂРѕРІРёС‡</middleName>
-				<function>РџСЂРѕРіСЂР°РјРјРёСЃС‚ Р‘Р”</function>
+				<surname>Григорьев</surname>
+				<name>Павел</name>
+				<middleName>Владимирович</middleName>
+				<function>Программист БД</function>
 				<salary>60000</salary>
 			</employment>
 			<employment>
-				<surname>Р”Р°РЅРёР»РѕРІ</surname>
-				<name>РќРёРєРѕР»Р°Р№</name>
-				<middleName>Р’Р°Р»РµРЅС‚РёРЅРѕРІРёС‡</middleName>
-				<function>РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ СЃР°Р№С‚Р°</function>
+				<surname>Данилов</surname>
+				<name>Николай</name>
+				<middleName>Валентинович</middleName>
+				<function>Администратор сайта</function>
 				<salary>83</salary>
 			</employment>
 		</employments>
 	</department>
-	<department name="Р”РёР·Р°Р№РЅРµСЂСЃРєРёР№ РѕС‚РґРµР»">
+	<department name="Дизайнерский отдел">
 		<employments>
 			<employment>
-				<surname>РђРІРµСЂСЊСЏРЅРѕРІ</surname>
-				<name>РРіРѕСЂСЊ</name>
-				<middleName>РђРЅР°С‚РѕР»СЊРµРІРёС‡</middleName>
-				<function>Р СѓРєРѕРІРѕРґРёС‚РµР»СЊ РѕС‚РґРµР»Р°</function>
+				<surname>Аверьянов</surname>
+				<name>Игорь</name>
+				<middleName>Анатольевич</middleName>
+				<function>Руководитель отдела</function>
 				<salary>100000</salary>
 			</employment>
 			<employment>
-				<surname>РђРіР°С„РѕРЅРѕРІР°</surname>
-				<name>РўР°С‚СЊСЏРЅР°</name>
-				<middleName>Р’РёС‚Р°Р»СЊРµРІРЅР°</middleName>
-				<function>Р—Р°РјРµСЃС‚РёС‚РµР»СЊ СЂСѓРєРѕРІРѕРґРёС‚РµР»СЏ</function>
+				<surname>Агафонова</surname>
+				<name>Татьяна</name>
+				<middleName>Витальевна</middleName>
+				<function>Заместитель руководителя</function>
 				<salary>80000</salary>
 			</employment>
 			<employment>
-				<surname>РђРґСѓРє</surname>
-				<name>РРіРѕСЂСЊ</name>
-				<middleName>Р‘РѕСЂРёСЃРѕРІРёС‡</middleName>
-				<function>WEB РґРёР·Р°Р№РЅРµСЂ</function>
+				<surname>Адук</surname>
+				<name>Игорь</name>
+				<middleName>Борисович</middleName>
+				<function>WEB дизайнер</function>
 				<salary>50000</salary>
 			</employment>
 			<employment>
-				<surname>РђРєСЃРµРЅРѕРІ</surname>
-				<name>РђР»РµРєСЃРµР№</name>
-				<middleName>Р“РµРЅРЅР°РґСЊРµРІРёС‡</middleName>
-				<function>РҐСѓРґРѕР¶РЅРёРє</function>
+				<surname>Аксенов</surname>
+				<name>Алексей</name>
+				<middleName>Геннадьевич</middleName>
+				<function>Художник</function>
 				<salary>50000</salary>
 			</employment>
 			<employment>
-				<surname>РђРєСЃРµРЅРѕРІ</surname>
-				<name>Р”РјРёС‚СЂРёР№</name>
-				<middleName>Р’РёРєС‚РѕСЂРѕРІРёС‡</middleName>
-				<function>Р”РёР·Р°Р№РЅРµСЂ РёРЅС‚РµСЂС„РµР№СЃР°</function>
+				<surname>Аксенов</surname>
+				<name>Дмитрий</name>
+				<middleName>Викторович</middleName>
+				<function>Дизайнер интерфейса</function>
 				<salary>45000</salary>
-			</employment>
-		</employments>
-	</department>
-	<department name="РЎРёСЃС‚РµРјРЅРѕРµ РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёРµ">
-		<employments>
-			<employment>
-				<surname>Р’Р°СЃРёР»СЊРµРІ</surname>
-				<name>РњР°РєСЃРёРј</name>
-				<middleName>Р’РёРєС‚РѕСЂРѕРІРёС‡</middleName>
-				<function>Р СѓРєРѕРІРѕРґРёС‚РµР»СЊ РѕС‚РґРµР»Р°</function>
-				<salary>100000</salary>
-			</employment>
-			<employment>
-				<surname>Р’РµР»РёС‡РєРѕ</surname>
-				<name>РћР»СЊРіР°</name>
-				<middleName>Р’Р°Р»РµСЂСЊРµРІРЅР°</middleName>
-				<function>Р—Р°РјРµСЃС‚РёС‚РµР»СЊ СЂСѓРєРѕРІРѕРґРёС‚РµР»СЏ РѕС‚РґРµР»Р°</function>
-				<salary>80000</salary>
-			</employment>
-			<employment>
-				<surname>Р“Р°РІСЂРёР»РѕРІ</surname>
-				<name>Р РѕРјР°РЅ</name>
-				<middleName>РќРёРєРѕР»Р°РµРІРёС‡</middleName>
-				<function>РЎРёСЃС‚РµРјРЅС‹Р№ РїСЂРѕРіСЂР°РјРјРёСЃС‚ Windows</function>
-				<salary>50000</salary>
-			</employment>
-			<employment>
-				<surname>Р”РѕР»РіРѕРІ</surname>
-				<name>РќРёРєРѕР»Р°Р№</name>
-				<middleName>РђР»РµРєСЃРµРµРІРёС‡</middleName>
-				<function>РЎРёСЃС‚РµРјРЅС‹Р№ РїСЂРѕРіСЂР°РјРјРёСЃС‚ Windows</function>
-				<salary>50000</salary>
-			</employment>
-			<employment>
-				<surname>Р”СЋРєРѕРІ</surname>
-				<name>Р’Р»Р°РґРёРјРёСЂ</name>
-				<middleName>Р•РІРіРµРЅСЊРµРІРёС‡</middleName>
-				<function>РЎРёСЃС‚РµРјРЅС‹Р№ РїСЂРѕРіСЂР°РјРјРёСЃС‚ Linux</function>
-				<salary>50000</salary>
-			</employment>
-			<employment>
-				<surname>Р•РјРµР»СЊСЏРЅРѕРІ</surname>
-				<name>Р”РјРёС‚СЂРёР№</name>
-				<middleName>Р®СЂСЊРµРІРёС‡</middleName>
-				<function>РЎРёСЃС‚РµРјРЅС‹Р№ РїСЂРѕРіСЂР°РјРјРёСЃС‚ Linux</function>
-				<salary>50000</salary>
 			</employment>
 		</employments>
 	</department>

@@ -15,9 +15,11 @@ std::string Msg = "You are wrong; repeate please!";
 int Answer(const std::string alt[], int n);
 
 int main(int argc, char* argv[]) {
-	SetConsoleCP(65001);
+	/*SetConsoleCP(65001);
 	SetConsoleOutputCP(65001);
-    setlocale(LC_ALL, "ru_RU.UTF-8");
+    setlocale(LC_ALL, "ru_RU.UTF-8");*/
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
 	if (argc < 2) {
 		printf("Not enough arguments!");
 		return -1;
@@ -26,9 +28,11 @@ int main(int argc, char* argv[]) {
 	CompanyState company_tree(file);
 	company_tree.readXML();
 	int index;
-	while (index = Answer(Menu, Num))
+    bool f_exit = false;
+	while ((!f_exit) && (index = Answer(Menu, Num)))
         switch (index) {
         case 0:
+            f_exit = true;
             break;
         case 1:
             company_tree.show();
@@ -70,6 +74,8 @@ int main(int argc, char* argv[]) {
             company_tree.redo_last_change();
             break;
         }
+    company_tree.writeXML();
+    std::cout << "End." << std::endl;
 	return 0;
 }
 

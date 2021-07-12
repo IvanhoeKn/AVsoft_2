@@ -6,7 +6,7 @@
 //==============================================================================================
 
 bool Department::set_ptr() {
-    if (!data->isEmpty()) {
+    if (data->isEmpty()) {
         std::string prompt = "Enter Department:\n";
         department tmp;
         do {

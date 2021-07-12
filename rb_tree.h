@@ -101,7 +101,7 @@ public:
 	~rb_tree() {}
 	bool isEmpty() const;
 	void clear();
-	bool insert(node<t_key>* ptr);
+	bool insert(node<t_key>*& ptr);
 	node<t_key>* remove(node<t_key>* ptr);
 	node<t_key>* find(const t_key& tmp) const;
 	node<t_key>* iterative_tree_search(t_key& key_srch) const;

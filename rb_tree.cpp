@@ -70,10 +70,11 @@ void rb_tree<t_key>::recursion_clear(node<t_key>* ptr) {
 	if (ptr->right)
 		recursion_clear(ptr->right);
 	delete ptr;
+	ptr = nullptr;
 }
 
 template <typename t_key>
-bool rb_tree<t_key>::insert(node<t_key>* ptr) {
+bool rb_tree<t_key>::insert(node<t_key>*& ptr) {
 	node<t_key>* previous = nullptr;
 	node<t_key>* current = root;
 	bool flag = false;

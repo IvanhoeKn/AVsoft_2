@@ -7,6 +7,8 @@
 #include "Command.h"
 #include "rb_tree.cpp"
 #include "pugixml-1.11/src/pugixml.cpp"
+#include <vector>
+#include <Windows.h>
 
 class CompanyState {
 private:
@@ -210,7 +212,8 @@ public:
 					ptr_d = nullptr;
 				}
 				if (ptr_d) {
-					ptr_d->key.title = dep_node.attribute("name").value();
+					ptr_d->key.title = dep_node.attribute("name").value(); 
+					ptr_d->key.title = UTF8_to_CP1251(ptr_d->key.title);
 					pugi::xml_node wrk_node = dep_node.child("employments").child("employment");
 					for (wrk_node; wrk_node; wrk_node = wrk_node.next_sibling("employment")) {
 						node<worker>* ptr_w;
@@ -223,9 +226,13 @@ public:
 						}
 						if (ptr_w) {
 							ptr_w->key.name = wrk_node.child_value("name");
+							ptr_w->key.name = UTF8_to_CP1251(ptr_w->key.name);
 							ptr_w->key.surname = wrk_node.child_value("surname");
+							ptr_w->key.surname = UTF8_to_CP1251(ptr_w->key.surname);
 							ptr_w->key.patronymic = wrk_node.child_value("middleName");
+							ptr_w->key.patronymic = UTF8_to_CP1251(ptr_w->key.patronymic);
 							ptr_w->key.post = wrk_node.child_value("function");
+							ptr_w->key.post = UTF8_to_CP1251(ptr_w->key.post);
 							ptr_w->key.salary = std::stoi(wrk_node.child_value("salary"));
 							ptr_d->key.average_slr = (ptr_d->key.average_slr * ptr_d->key.amount_wrk + ptr_w->key.salary) / ++ptr_d->key.amount_wrk;
 							ptr_d->key.employment.insert(ptr_w);
@@ -240,29 +247,31 @@ public:
 		pugi::xml_node node_tmp;
 		docXML.reset();
 		pugi::xml_node node_departments = docXML.append_child("departments");
-		for (auto it = data.begin(); it != data.end(); it++) {
-			pugi::xml_node node_d = node_departments.append_child("department");
-			node_d.append_attribute("name") = it.get()->key.title.c_str();
-			pugi::xml_node node_employments = node_d.append_child("employments");
-			rb_tree<worker> data_worker = it.get()->key.employment;
-			for (auto it_w = data_worker.begin(); it_w != data_worker.end(); it_w++) {
-				pugi::xml_node node_w = node_employments.append_child("employment");
-				node_w.append_child("surname").append_child(pugi::node_pcdata).set_value(it_w.get()->key.surname.c_str());
-				node_w.append_child("name").append_child(pugi::node_pcdata).set_value(it_w.get()->key.name.c_str());
-				node_w.append_child("middleName").append_child(pugi::node_pcdata).set_value(it_w.get()->key.patronymic.c_str());
-				node_w.append_child("function").append_child(pugi::node_pcdata).set_value(it_w.get()->key.post.c_str());
-				node_w.append_child("salary").append_child(pugi::node_pcdata).set_value(std::to_string(it_w.get()->key.salary).c_str());
+		if (data.isEmpty())
+			for (auto it = data.begin(); it != data.end(); it++) {
+				pugi::xml_node node_d = node_departments.append_child("department");
+				node_d.append_attribute("name") = it.get()->key.title.c_str();
+				pugi::xml_node node_employments = node_d.append_child("employments");
+				rb_tree<worker> data_worker = it.get()->key.employment;
+				if (data_worker.isEmpty())
+					for (auto it_w = data_worker.begin(); it_w != data_worker.end(); it_w++) {
+						pugi::xml_node node_w = node_employments.append_child("employment");
+						node_w.append_child("surname").append_child(pugi::node_pcdata).set_value(it_w.get()->key.surname.c_str());
+						node_w.append_child("name").append_child(pugi::node_pcdata).set_value(it_w.get()->key.name.c_str());
+						node_w.append_child("middleName").append_child(pugi::node_pcdata).set_value(it_w.get()->key.patronymic.c_str());
+						node_w.append_child("function").append_child(pugi::node_pcdata).set_value(it_w.get()->key.post.c_str());
+						node_w.append_child("salary").append_child(pugi::node_pcdata).set_value(std::to_string(it_w.get()->key.salary).c_str());
+					}
 			}
-		}
 		std::string new_file = "new_" + filename;
 		docXML.save_file(new_file.c_str(), "\t", pugi::format_default, pugi::encoding_utf8);
 	}
 	void clear() {
 		filename.clear();
 		docXML.reset();
-		data.clear();
 		clear_stack(history);
 		clear_stack(trash);
+		data.clear();
 	}
 protected:
 	bool load() {
@@ -284,6 +293,19 @@ protected:
 			tmp.pop();
 			delete ptr;
 		}
+	}
+	std::string UTF8_to_CP1251(std::string const& utf8) {
+		if (!utf8.empty()) {
+			int wchlen = MultiByteToWideChar(CP_UTF8, 0, utf8.c_str(), utf8.size(), NULL, 0);
+			if (wchlen > 0 && wchlen != 0xFFFD) {
+				std::vector<wchar_t> wbuf(wchlen);
+				MultiByteToWideChar(CP_UTF8, 0, utf8.c_str(), utf8.size(), &wbuf[0], wchlen);
+				std::vector<char> buf(wchlen);
+				WideCharToMultiByte(1251, 0, &wbuf[0], wchlen, &buf[0], wchlen, 0, 0);
+				return std::string(&buf[0], wchlen);
+			}
+		}
+		return std::string();
 	}
 };
 
